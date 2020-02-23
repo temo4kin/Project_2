@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e20d4aa-2c15-4b24-a7e7-e7aa6d60cc03" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Project 2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project 2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/booking.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/booking.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/goal.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/goal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/request.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/request.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/request_done.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/request_done.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,9 +42,13 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Документы\Stepic\Project_2" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates" />
     </key>
@@ -119,39 +114,53 @@
       <option name="presentableId" value="Default" />
       <updated>1576362016546</updated>
     </task>
+    <task id="LOCAL-00001" summary="Создание своих шаблонов">
+      <created>1582477746895</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1582477746895</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Создание своих шаблонов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Создание своих шаблонов" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="583" y="134" key="CommitChangelistDialog2" timestamp="1582474581776">
+    <state x="583" y="134" key="CommitChangelistDialog2" timestamp="1582477745074">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state x="583" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1582474581776" />
+    <state x="583" y="134" key="CommitChangelistDialog2/0.0.1858.1080@0.0.1858.1080" timestamp="1582477745074" />
     <state x="709" y="294" key="FileChooserDialogImpl" timestamp="1582474670397">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="709" y="294" key="FileChooserDialogImpl/0.0.1858.1080@0.0.1858.1080" timestamp="1582474670397" />
-    <state width="1837" height="295" key="GridCell.Tab.0.bottom" timestamp="1582477666229">
+    <state width="1837" height="295" key="GridCell.Tab.0.bottom" timestamp="1582479696313">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="295" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1582477666229" />
-    <state width="1837" height="295" key="GridCell.Tab.0.center" timestamp="1582477666229">
+    <state width="1837" height="295" key="GridCell.Tab.0.bottom/0.0.1858.1080@0.0.1858.1080" timestamp="1582479696313" />
+    <state width="1837" height="295" key="GridCell.Tab.0.center" timestamp="1582479696312">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="295" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1582477666229" />
-    <state width="1837" height="295" key="GridCell.Tab.0.left" timestamp="1582477666228">
+    <state width="1837" height="295" key="GridCell.Tab.0.center/0.0.1858.1080@0.0.1858.1080" timestamp="1582479696312" />
+    <state width="1837" height="295" key="GridCell.Tab.0.left" timestamp="1582479696312">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="295" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1582477666228" />
-    <state width="1837" height="295" key="GridCell.Tab.0.right" timestamp="1582477666229">
+    <state width="1837" height="295" key="GridCell.Tab.0.left/0.0.1858.1080@0.0.1858.1080" timestamp="1582479696312" />
+    <state width="1837" height="295" key="GridCell.Tab.0.right" timestamp="1582479696312">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
-    <state width="1837" height="295" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1582477666229" />
+    <state width="1837" height="295" key="GridCell.Tab.0.right/0.0.1858.1080@0.0.1858.1080" timestamp="1582479696312" />
     <state x="430" y="182" key="SettingsEditor" timestamp="1582474774501">
       <screen x="0" y="0" width="1858" height="1080" />
     </state>
     <state x="430" y="182" key="SettingsEditor/0.0.1858.1080@0.0.1858.1080" timestamp="1582474774501" />
+    <state x="521" y="272" key="Vcs.Push.Dialog.v2" timestamp="1582477760100">
+      <screen x="0" y="0" width="1858" height="1080" />
+    </state>
+    <state x="521" y="272" key="Vcs.Push.Dialog.v2/0.0.1858.1080@0.0.1858.1080" timestamp="1582477760100" />
   </component>
 </project>
