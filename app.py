@@ -6,7 +6,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-
     return render_template("index.html", goals=goals, teachers_number=teachers_number, teachers=teachers)
 
 @app.route('/goals/<goal>')
@@ -14,9 +13,9 @@ def all_goals(goal):
     return render_template("goal.html")
 
 
-@app.route('/profiles/<uin>')
-def profiles(uin):
-    return render_template("profile.html")
+@app.route('/profile/<int:uin>')
+def profile(uin):
+    return render_template("profile.html", teachers=teachers, uin=uin, teachers_number=[1])
 
 
 @app.route('/request')
@@ -70,6 +69,7 @@ while len(teachers_number) != 6:
 
 print(teachers_number)
 
+print(teachers[0]['name'])
 
 if __name__ == '__main__':
     app.run()

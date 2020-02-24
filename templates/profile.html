@@ -3,18 +3,18 @@
 {% block container %}
   <main class="container mt-3">
     <div class="card my-4 mx-auto">
+      {% for i in teachers_number %}
       <div class="card-body m-2 m-md-4">
         <div class="row">
-          <div class="col-5"><img src="../static/pict 1.png" class="img-fluid" alt=""></div>
+          <div class="col-5"><img src="{{ teachers[uin]['picture'] }}" class="img-fluid" alt=""></div>
           <div class="col-7">
-            <h1 class="h2">Morris Simmmons</h1>
-            <p><span class="badge badge-secondary mr-2">Для путешествий </span>Рейтинг: 4.8 Ставка: 1200 / час</p>
-            <p>Native English language teacherHi Everyone! My name is Richard; I am a native English speaker. I was born in South Africa, Spent 12 years living in the UK and am now living in Spain. I have a degree in food science, a TEFL certificate and a level 3 in training and education. I worked in cheese manufacturing for many years and have good knowledge of dairy production and food safety topics.
-            <br> <br>
-
+            <h1 class="h2">{{ teachers[uin]['name'] }}</h1>
+            <p><span class="badge badge-secondary mr-2">Для путешествий </span>Рейтинг: {{ teachers[uin]['rating'] }} Ставка: {{ teachers[uin]['price'] }} / час</p>
+            <p>{{ teachers[i]['about'] }}</p>
           </div>
         </div>
       </div>
+      {% endfor %}
       <div class="card-body m-2 m-md-4">
         <h2 class="h5 mb-4">Записаться на пробный урок</h2>
         <table class="table">
