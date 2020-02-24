@@ -20,7 +20,6 @@ def profile(uin):
     for i in teachers_number:
         for day in teachers[i]['free']:
             days_new = {x: True for x in teachers[i]['free'][day].keys() if teachers[i]['free'][day][x] == True}
-            days_new = {x: True for x in teachers[i]['free'].keys()}
             work_week.append(days_new)
     return render_template("profile.html", teachers=teachers, uin=uin, teachers_number=[1], goal_teacher=goal_teacher, goals=goals, weekdays=weekdays, work_week=work_week)
 
