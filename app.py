@@ -1,14 +1,16 @@
 from flask import Flask, render_template, abort
-import json
+from data import *
+import random
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+
+    return render_template("index.html", goals=goals, teachers_number=teachers_number, teachers=teachers)
 
 @app.route('/goals/<goal>')
-def goals(goal):
+def all_goals(goal):
     return render_template("goal.html")
 
 
@@ -51,12 +53,19 @@ def render_server_error(error):
 def not_found(e):
     output = render_template("404.html", title=title, subtitle=subtitle, departures=departures, description=)
     return output
+
 '''
+teachers_number = []
 
-with open('data.json', 'r') as f:
-    team = json.loads(f.read())
+while len(teachers_number) != 6:
+    a = random.randint(0, 11)
+    if a in teachers_number:
+        a = random.randint(1, 16)
+    else:
+        teachers_number.append(a)
 
-print(team)
+print(teachers_number)
+
 
 if __name__ == '__main__':
     app.run()
