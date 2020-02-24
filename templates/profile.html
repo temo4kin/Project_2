@@ -18,27 +18,18 @@
       <div class="card-body m-2 m-md-4">
         <h2 class="h5 mb-4">Записаться на пробный урок</h2>
         <table class="table">
-          {% for i in teachers[uin]['free'] %}
           <tr>
-            <th><span class="btn font-weight-bold py-0">#</span></th>
-            <th>Пн</th>
-            <th>Вт</th>
-            <th>Ср</th>
-            <th>Чт</th>
-            <th>Пт</th>
-            <th>Сб</th>
-            <th>Вс</th>
+            {% for day in teachers[uin]['free'] %}
+            <th>{{ day }}</th>
+            {% endfor %}
           </tr>
+          {% for day in teachers[uin]['free'] %}
           <tr>
-            <td><span class="btn">8:00</span></td>
-            <td><a href="booking.html" class="btn btn-sm btn-secondary">8:00</a></td>
-            <td><a href="#" class="btn btn-sm btn-secondary">8:00</a></td>
-            <td><a href="#" class="btn btn-sm btn-secondary">8:00</a></td>
-            <td><a href="#" class="btn btn-sm btn-secondary">8:00</a></td>
-            <td><a href="#" class="btn btn-sm btn-secondary">8:00</a></td>
-            <td>-</td>
-            <td>-</td>
+            {% for hour in teachers[uin]['free'][day] %}
+            <td><a href="booking.html" {% if (teachers[uin]['free'][day][hour]) == True %} class ="btn btn-sm btn-success"{% elif teachers[uin]['free'][day][hour] == False %} class ="btn btn-sm btn-secondary"{% else %} class="btn"{% endif %}>{{ hour }}</a></td>
+          {% endfor %}
           </tr>
+          {% endfor %}
           <tr>
             <td><span class="btn">10:00</span></td>
             <td><a href="#" class="btn btn-sm btn-secondary">10:00</a></td>
