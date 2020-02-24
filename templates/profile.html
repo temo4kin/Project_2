@@ -9,7 +9,7 @@
           <div class="col-5"><img src="{{ teachers[uin]['picture'] }}" class="img-fluid" alt=""></div>
           <div class="col-7">
             <h1 class="h2">{{ teachers[uin]['name'] }}</h1>
-            <p><span class="badge badge-secondary mr-2">Для путешествий </span>Рейтинг: {{ teachers[uin]['rating'] }} Ставка: {{ teachers[uin]['price'] }} / час</p>
+            <p><span class="badge badge-secondary mr-2">{{ goals[goal_teacher] }} </span>Рейтинг: {{ teachers[uin]['rating'] }} Ставка: {{ teachers[uin]['price'] }} / час</p>
             <p>{{ teachers[i]['about'] }}</p>
           </div>
         </div>
@@ -18,6 +18,7 @@
       <div class="card-body m-2 m-md-4">
         <h2 class="h5 mb-4">Записаться на пробный урок</h2>
         <table class="table">
+          {% for i in teachers[uin]['free'] %}
           <tr>
             <th><span class="btn font-weight-bold py-0">#</span></th>
             <th>Пн</th>

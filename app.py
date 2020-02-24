@@ -15,7 +15,8 @@ def all_goals(goal):
 
 @app.route('/profile/<int:uin>')
 def profile(uin):
-    return render_template("profile.html", teachers=teachers, uin=uin, teachers_number=[1])
+    goal_teacher = teachers[uin]['goals'][0]
+    return render_template("profile.html", teachers=teachers, uin=uin, teachers_number=[1], goal_teacher=goal_teacher, goals=goals)
 
 
 @app.route('/request')
