@@ -38,7 +38,7 @@ def booking():
 def booking_done():
     return render_template("booking_done.html")
 
-
+'''
 @app.errorhandler(404)
 def render_not_found(error):
     return "Ничего не нашлось! Вот неудача, отправляйтесь на главную!", 404
@@ -47,14 +47,18 @@ def render_not_found(error):
 @app.errorhandler(500)
 def render_server_error(error):
     return "Что-то не так, но мы все починим", 500
-
 '''
+
+@app.errorhandler(500)
+def render_server_error(error):
+    return render_template("500.html", goals=goals), 500
+
+
 @app.errorhandler(404)
-def not_found(e):
-    output = render_template("404.html", title=title, subtitle=subtitle, departures=departures, description=)
-    return output
+def render_not_found(error):
+    return render_template("404.html", goals=goals), 404
 
-'''
+
 teachers_number = []
 
 while len(teachers_number) != 6:
