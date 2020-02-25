@@ -20,29 +20,9 @@
             <section class="available">
 
               <h4 class="mb-4 mt-5">Записаться на пробный урок</h4>
-              {% for days in weekdays %}
-              <h6 class="mt-4">{{ days }}</h6>
-              {% if teachers[i]['free'][day][hour] == True %}
-              <a href="#" class="btn btn-outline-success mr-2">12:00 свободно</a>
-              <a href="#" class="btn btn-outline-success  mr-2">14:00 свободно</a>
-
-              <h6 class="mt-4">Вторник</h6>
-              <a href="#" class="btn btn-outline-success  mr-2">14:00 свободно</a>
-              <a href="#" class="btn btn-outline-success  mr-2">16:00 свободно</a>
-
-              <h6 class="mt-4">Среда</h6>
-              <a href="#" class="btn btn-outline-success  mr-2">14:00 свободно</a>
-              <a href="#" class="btn btn-outline-success  mr-2">16:00 свободно</a>
-              <a href="#" class="btn btn-outline-success  mr-2">18:00 свободно</a>
-
-              <h6 class="mt-4">Четверг</h6>
-
-              <p>Нет свободных уроков</p>
-
-              <h6 class="mt-4">Пятница</h6>
-              <a href="#" class="btn btn-outline-success  mr-2">14:00 свободно</a>
-              <a href="#" class="btn btn-outline-success  mr-2">16:00 свободно</a>
-              <a href="#" class="btn btn-outline-success  mr-2">18:00 свободно</a>
+              {% for key, value in work_week.items() %}
+              <h6 class="mt-4">{{ key }}</h6>
+              {% if {{ value|length }} = 0 %}<p>Нет свободных уроков</p>{% else %}{% for times in value %}<a href="#" class="btn btn-outline-success mr-2">{{ times }} свободно</a>{% endfor %}{% endif %}
               {% endfor %}
             </section>
 

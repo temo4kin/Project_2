@@ -16,11 +16,15 @@ def all_goals(goal):
 @app.route('/profile/<int:uin>')
 def profile(uin):
     goal_teacher = teachers[uin]['goals'][0]
-    work_week = []
-    for i in teachers_number:
-        for day in teachers[i]['free']:
-            days_new = {x: True for x in teachers[i]['free'][day].keys() if teachers[i]['free'][day][x] == True}
-            work_week.append(days_new)
+    work_week = {}
+    days_week = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+    num = 0
+    for i in range(1):
+        for day in teachers[uin]['free']:
+            days_new = {x: True for x in teachers[uin]['free'][day].keys() if teachers[uin]['free'][day][x] == True}
+            print(days_new)
+            work_week[days_week[num]] = days_new
+            num += 1
     return render_template("profile.html", teachers=teachers, uin=uin, teachers_number=[1], goal_teacher=goal_teacher, goals=goals, weekdays=weekdays, work_week=work_week)
 
 
@@ -75,7 +79,7 @@ while len(teachers_number) != 6:
 
 print(teachers_number)
 
-print(teachers[0]['name'])
+
 
 if __name__ == '__main__':
     app.run()
