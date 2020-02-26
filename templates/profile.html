@@ -12,7 +12,7 @@
             <section class="teacher=info">
 
               <h1 class="h2">{{ teachers[uin]['name'] }}</h1>
-              <p><span class="badge badge-secondary mr-2">{{ goals[goal_teacher] }} </span>Рейтинг: {{ teachers[uin]['rating'] }} Ставка: {{ teachers[uin]['price'] }} / час</p>
+              <p>{% for goal in teachers[uin]['goals'] %}<span class="badge badge-secondary mr-2"> {{ goals[goal] }} </span>{% endfor %}Рейтинг: {{ teachers[uin]['rating'] }} Ставка: {{ teachers[uin]['price'] }} / час</p>
               <p>{{ teachers[i]['about'] }}</p>
 
             </section>
@@ -22,7 +22,7 @@
               <h4 class="mb-4 mt-5">Записаться на пробный урок</h4>
               {% for key, value in work_week.items() %}
               <h6 class="mt-4">{{ weekdays[key] }}</h6>
-              {% if {{ value|length }} == 0 %}<p>Нет свободных уроков</p>{% else %}{% for times in value %}<a href="#" class="btn btn-outline-success mr-2">{{ times }} свободно</a>{% endfor %}{% endif %}
+              {% if (value|length) == 0 %}<p>Нет свободных уроков</p>{% else %}{% for times in value %}<a href="#" class="btn btn-outline-success mr-2">{{ times }} свободно</a>{% endfor %}{% endif %}
               {% endfor %}
             </section>
 
@@ -34,77 +34,4 @@
     </div>
   </main>
 
-  <main class="container mt-3">
-    <div class="card my-4 mx-auto">
-      {% for i in teachers_number %}
-      <div class="card-body m-2 m-md-4">
-        <div class="row">
-          <div class="col-5"><img src="{{ teachers[uin]['picture'] }}" class="img-fluid" alt=""></div>
-          <div class="col-7">
-            <h1 class="h2">{{ teachers[uin]['name'] }}</h1>
-            <p><span class="badge badge-secondary mr-2">{{ goals[goal_teacher] }} </span>Рейтинг: {{ teachers[uin]['rating'] }} Ставка: {{ teachers[uin]['price'] }} / час</p>
-            <p>{{ teachers[i]['about'] }}</p>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-      <div class="card-body m-2 m-md-4">
-        <h2 class="h5 mb-4">Записаться на пробный урок</h2>
-        <table class="table">
-          <tr>
-            {% for day in teachers[uin]['free'] %}
-            <th>{{ day }}</th>
-            {% endfor %}
-          </tr>
-          {% for day in teachers[uin]['free'] %}
-          <tr>
-            {% for hour in teachers[uin]['free'][day] %}
-            <td><a href="booking.html" {% if (teachers[uin]['free'][day][hour]) == True %} class ="btn btn-sm btn-success"{% elif teachers[uin]['free'][day][hour] == False %} class ="btn btn-sm btn-secondary"{% else %} class="btn"{% endif %}>{{ hour }}</a></td>
-          {% endfor %}
-          </tr>
-          {% endfor %}
-          <tr>
-            <td><span class="btn">10:00</span></td>
-            <td><a href="#" class="btn btn-sm btn-secondary">10:00</a></td>
-            <td><a href="#" class="btn btn-sm btn-success">10:00</a></td>
-            <td><a href="#" class="btn btn-sm btn-success">10:00</a></td>
-            <td><a href="#" class="btn btn-sm btn-success">10:00</a></td>
-            <td><a href="#" class="btn btn-sm btn-secondary">10:00</a></td>
-            <td>-</td>
-            <td>-</td>
-          </tr>
-          <tr>
-            <td><span class="btn">12:00</span></td>
-            <td><a href="#" class="btn btn-sm btn-secondary">12:00</a></td>
-            <td><a href="#" class="btn btn-sm btn-success">12:00</a></td>
-            <td><a href="#" class="btn btn-sm btn-success">12:00</a></td>
-            <td><a href="#" class="btn btn-sm btn-success">12:00</a></td>
-            <td><a href="#" class="btn btn-sm btn-secondary">12:00</a></td>
-            <td>-</td>
-            <td>-</td>
-          </tr>
-          <tr>
-            <td><span class="btn">14:00</span></td>
-            <td><a href="#" class="btn btn-sm btn-secondary">14:00</a></td>
-            <td><a href="#" class="btn btn-sm btn-success">14:00</a></td>
-            <td><a href="#" class="btn btn-sm btn-success">14:00</a></td>
-            <td><a href="#" class="btn btn-sm btn-success">14:00</a></td>
-            <td><a href="#" class="btn btn-sm btn-secondary">14:00</a></td>
-            <td>-</td>
-            <td>-</td>
-          </tr>
-          <tr>
-            <td><span class="btn">16:00</span></td>
-            <td><a href="#" class="btn btn-sm btn-secondary">16:00</a></td>
-            <td><a href="#" class="btn btn-sm btn-success">16:00</a></td>
-            <td><a href="#" class="btn btn-sm btn-success">16:00</a></td>
-            <td><a href="#" class="btn btn-sm btn-success">16:00</a></td>
-            <td><a href="#" class="btn btn-sm btn-secondary">16:00</a></td>
-            <td>-</td>
-            <td>-</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </main>
 {% endblock %}
