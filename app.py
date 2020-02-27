@@ -12,9 +12,14 @@ def index():
 def all():
     return render_template("all.html", goals=goals, teachers=teachers)
 
-@app.route('/goals/<goal>')
-def all_goals(goal):
-    return render_template("goal.html")
+@app.route('/goal/<goal_name>/')
+def goal(goal_name):
+    teachers_goal = []
+    for teacher in teachers:
+        if goal_name in teacher['goals']:
+            teachers_goal.append(teacher)
+    print(teachers_goal)
+    return render_template("goal.html", goals=goals, teachers_goal=teachers_goal, goal_name=goal_name)
 
 
 @app.route('/profile/<int:uin>')
