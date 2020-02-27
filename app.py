@@ -8,6 +8,10 @@ app = Flask(__name__)
 def index():
     return render_template("index.html", goals=goals, teachers_number=teachers_number, teachers=teachers)
 
+@app.route('/all')
+def all():
+    return render_template("all.html", goals=goals, teachers=teachers)
+
 @app.route('/goals/<goal>')
 def all_goals(goal):
     return render_template("goal.html")
