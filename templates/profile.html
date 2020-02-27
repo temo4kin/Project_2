@@ -22,7 +22,7 @@
               <h4 class="mb-4 mt-5">Записаться на пробный урок</h4>
               {% for key, value in work_week.items() %}
               <h6 class="mt-4">{{ weekdays[key] }}</h6>
-              {% if (value|length) == 0 %}<p>Нет свободных уроков</p>{% else %}{% for times in value %}<a href="#" class="btn btn-outline-success mr-2">{{ times }} свободно</a>{% endfor %}{% endif %}
+              {% if (value|length) == 0 %}<p>Нет свободных уроков</p>{% else %}{% for times in value %}<a href="/booking/{{ teachers[uin]['id'] }}/{{ key }}/{{ times }}" class="btn btn-outline-success mr-2">{{ times }} свободно</a>{% endfor %}{% endif %}
               {% endfor %}
             </section>
 
