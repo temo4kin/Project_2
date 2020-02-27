@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template("index.html", goals=goals, teachers_number=teachers_number, teachers=teachers)
+    return render_template("index.html", goals=goals, teachers_random=teachers_random, teachers=teachers)
 
 @app.route('/all')
 def all():
@@ -69,6 +69,8 @@ def render_server_error(error):
 def render_not_found(error):
     return render_template("404.html", goals=goals), 404
 
+
+teachers_random = random.sample(teachers, 6)
 
 teachers_number = []
 
