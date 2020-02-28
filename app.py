@@ -45,9 +45,9 @@ def request_done():
     return render_template("request_done.html")
 
 
-@app.route('/booking/<teacher_id>/<day>/<time>')
+@app.route('/booking/<int:teacher_id>/<day>/<time>')
 def booking(teacher_id, day, time):
-    return render_template("booking.html")
+    return render_template("booking.html", teachers=teachers, teacher_id=teacher_id, weekdays=weekdays, day=day, time=time)
 
 
 @app.route('/booking_done')
