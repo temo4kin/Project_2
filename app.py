@@ -55,8 +55,10 @@ def booking_done():
     clientweekday = request.form.get("clientWeekday")
     clienttime = request.form.get("clientTime")
     clientteacher = request.form.get("clientTeacher")
-    print(clientweekday, clienttime, clientteacher)
-    return render_template("booking_done.html")
+    clientname = request.form.get("clientName")
+    clientphone = request.form.get("clientPhone")
+    print(clientweekday, clienttime, clientteacher, clientphone, clientname)
+    return render_template("booking_done.html", clienttime=clienttime, clientteacher=clientteacher, clientweekday=clientweekday, clientname=clientname, clientphone=clientphone)
 
 '''
 @app.errorhandler(404)
