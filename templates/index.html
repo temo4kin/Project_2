@@ -8,7 +8,7 @@
     <div class="text-center mb-5">
       <div class="btn-group mx-auto mb-0" role="group" aria-label="Basic example">
         {% for key, value in goals.items() %}
-        <a href="goal/{{ key }}" class="btn btn-outline-secondary">{{ value }}</a>
+        <a href="goal/{{ key }}" class="btn btn-outline-secondary">{{ value[0] }} {{ value[1] }}</a>
         {% endfor %}
       </div>
     </div>

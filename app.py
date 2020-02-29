@@ -1,4 +1,4 @@
-from flask import Flask, render_template, abort
+from flask import Flask, render_template, request
 from data import *
 import random
 
@@ -50,8 +50,12 @@ def booking(teacher_id, day, time):
     return render_template("booking.html", teachers=teachers, teacher_id=teacher_id, weekdays=weekdays, day=day, time=time)
 
 
-@app.route('/booking_done')
+@app.route('/booking_done', methods=['POST'])
 def booking_done():
+    clientweekday = request.form.get("clientWeekday")
+    clienttime = request.form.get("clientTime")
+    clientteacher = request.form.get("clientTeacher")
+    print(clientweekday, clienttime, clientteacher)
     return render_template("booking_done.html")
 
 '''
@@ -76,17 +80,6 @@ def render_not_found(error):
 
 
 teachers_random = random.sample(teachers, 6)
-
-teachers_number = []
-
-while len(teachers_number) != 6:
-    a = random.randint(0, 11)
-    if a in teachers_number:
-        a = random.randint(1, 16)
-    else:
-        teachers_number.append(a)
-
-print(teachers_number)
 
 
 
