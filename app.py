@@ -36,12 +36,13 @@ def profile(uin):
 
 
 @app.route('/request')
-def request():
+def request_client():
     return render_template("request.html")
 
 
-@app.route('/request_done')
+@app.route('/request_done', methods=['POST'])
 def request_done():
+
     return render_template("request_done.html")
 
 
@@ -57,8 +58,7 @@ def booking_done():
     clientteacher = request.form.get("clientTeacher")
     clientname = request.form.get("clientName")
     clientphone = request.form.get("clientPhone")
-    print(clientweekday, clienttime, clientteacher, clientphone, clientname)
-    return render_template("booking_done.html", clienttime=clienttime, clientteacher=clientteacher, clientweekday=clientweekday, clientname=clientname, clientphone=clientphone)
+    return render_template("booking_done.html", weekdays=weekdays, clienttime=clienttime, clientteacher=clientteacher, clientweekday=clientweekday, clientname=clientname, clientphone=clientphone)
 
 '''
 @app.errorhandler(404)
