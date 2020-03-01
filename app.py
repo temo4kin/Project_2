@@ -1,6 +1,7 @@
+import json
+from random import sample
 from flask import Flask, render_template, request
 from data import *
-import random
 
 app = Flask(__name__)
 
@@ -42,34 +43,53 @@ def request_client():
 
 @app.route('/request_done', methods=['POST'])
 def request_done():
-
-    return render_template("request_done.html")
+    goal = request.form.get('goal')
+    time = request.form.get('time')
+    client_name_request = request.form.get('clientName')
+    client_phone_request = request.form.get('clientPhone')
+    request_client = dict(goal=goal,
+                  time=time,
+                  name=client_name_request,
+                  phone=client_phone_request)
+    with open("request.json", "w") as f:
+        json.dump(request_client, f)
+    return render_template("request_done.html", goals_teachers=goals,
+                           goal=goal,
+                           time=time,
+                           client_name_request=client_name_request,
+                           client_phone_request=client_phone_request)
 
 
 @app.route('/booking/<int:teacher_id>/<day>/<time>')
 def booking(teacher_id, day, time):
-    return render_template("booking.html", teachers=teachers, teacher_id=teacher_id, weekdays=weekdays, day=day, time=time)
+    return render_template("booking.html",
+                           teachers=teachers,
+                           teacher_id=teacher_id,
+                           weekdays=weekdays,
+                           day=day,
+                           time=time)
 
 
 @app.route('/booking_done', methods=['POST'])
 def booking_done():
-    clientweekday = request.form.get("clientWeekday")
-    clienttime = request.form.get("clientTime")
-    clientteacher = request.form.get("clientTeacher")
-    clientname = request.form.get("clientName")
-    clientphone = request.form.get("clientPhone")
-    return render_template("booking_done.html", weekdays=weekdays, clienttime=clienttime, clientteacher=clientteacher, clientweekday=clientweekday, clientname=clientname, clientphone=clientphone)
-
-'''
-@app.errorhandler(404)
-def render_not_found(error):
-    return "Ничего не нашлось! Вот неудача, отправляйтесь на главную!", 404
-
-
-@app.errorhandler(500)
-def render_server_error(error):
-    return "Что-то не так, но мы все починим", 500
-'''
+    client_weekday = request.form.get("clientWeekday")
+    client_time = request.form.get("clientTime")
+    client_teacher = request.form.get("clientTeacher")
+    client_name = request.form.get("clientName")
+    client_phone = request.form.get("clientPhone")
+    client = dict(weekday=client_weekday,
+                  time=client_time,
+                  teacher=int(client_teacher),
+                  name=client_name,
+                  phone=client_phone)
+    with open("booking.json", "w") as f:
+        json.dump(client, f)
+    return render_template("booking_done.html", weekdays=weekdays,
+                           client_time=client_time,
+                           client_teacher=client_teacher,
+                           client_weekday=client_weekday,
+                           client_name=client_name,
+                           client_phone=client_phone)
 
 @app.errorhandler(500)
 def render_server_error(error):
@@ -81,7 +101,7 @@ def render_not_found(error):
     return render_template("404.html", goals=goals), 404
 
 
-teachers_random = random.sample(teachers, 6)
+teachers_random = sample(teachers, 6)
 
 
 

@@ -13,10 +13,10 @@
           </div>
           <hr />
           <div class="card-body mx-5">
-            <p><b>Цель занятий:</b> Для работы</p>
-            <p><b>Времени есть:</b> 1-2 часа в неделю</p>
-            <p><b>Имя:</b> Александр</p>
-            <p><b>Телефон:</b> +7 944 322 22 11</p>
+            <p><b>Цель занятий:</b> {{ goals_teachers[goal][0] }} {{ goals_teachers[goal][1] }}</p>
+            <p><b>Времени есть:</b> {{ time }} час{% if time == '1-2' %}а{% else %}ов{% endif %} в неделю</p>
+            <p><b>Имя:</b> {{ client_name_request }}</p>
+            <p><b>Телефон:</b> {{ client_phone_request }}</p>
           </div>
         </div>
       </div>
