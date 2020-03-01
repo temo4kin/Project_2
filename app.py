@@ -117,8 +117,7 @@ def render_not_found(error):
 
 teachers_random = sample(teachers, 6)
 
-now = datetime.datetime.now()
-year = now.year
+year = datetime.datetime.now().year
 
 if __name__ == '__main__':
     app.run()
