@@ -19,7 +19,6 @@ def goal(goal_name):
     for teacher in teachers:
         if goal_name in teacher['goals']:
             teachers_goal.append(teacher)
-    print(teachers_goal)
     return render_template("goal.html", goals=goals, teachers_goal=teachers_goal, goal_name=goal_name)
 
 
